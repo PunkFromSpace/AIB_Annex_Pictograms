@@ -3,9 +3,12 @@ __pycache__/
 *.pyc
 *.pyo
 
+.vscode/
+
 # Virtual environments
 venv/
 env/
+.env
 
 # IDE-related files
 .vscode/
