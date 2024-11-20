@@ -5,14 +5,14 @@ import matplotlib.patches as patches
 
 # Function to map hostility class to graphical properties
 def get_hostility_symbol(hostility):
-    if hostility == "safe":
+    if hostility == "Safe":
         return {"circle_type": "dotted", "radius": 0.2, "line_width": 1.5}
-    elif hostility == "moderate":
+    elif hostility == "Moderate":
         return {"circle_type": "solid", "radius": 0.2, "line_width": 1.5}
-    elif hostility == "hazardous":
+    elif hostility == "Hazardous":
         return {"circle_type": "double", "radius": 0.2, "line_width": 2.0}
     else:
-        raise ValueError("Invalid hostility class. Choose from 'safe', 'moderate', or 'hazardous'.")
+        raise ValueError("Invalid hostility class. Choose from 'Safe', 'Moderate', or 'Hazardous'.")
 
 # Function to generate the pictograph
 def draw_pictograph(data):
@@ -33,12 +33,12 @@ def draw_pictograph(data):
         ax.add_patch(inner_circle)
 
     # Add a symbol for finiteness on the outer circle
-    if data["finiteness"] == "infinite":
+    if data["finiteness"] == "Infinite":
         ax.annotate("△", xy=(0.8, 0.5), fontsize=15, ha="center", va="center")
-    elif data["finiteness"] == "finite":
+    elif data["finiteness"] == "Finite":
         ax.annotate("T", xy=(0.8, 0.5), fontsize=15, ha="center", va="center")
     else:
-        raise ValueError("Invalid finiteness. Choose from 'infinite' or 'finite'.")
+        raise ValueError("Invalid finiteness. Choose from 'Infinite' or 'Finite'.")
 
     # Set limits and aspect ratio
     ax.set_xlim(0, 1)
